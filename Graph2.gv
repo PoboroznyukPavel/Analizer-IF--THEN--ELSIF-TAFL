@@ -1,0 +1,90 @@
+digraph 
+finite_state_machine { 
+rankdir=TB; 
+size="40" 
+node [shape = octagon]; 
+E1;
+node [shape = sqare]; 
+SP5->SP5[label = "space"];
+node [shape = circle]; 
+SP6->SP6[label = "space"];
+SP7->SP7[label = "space"];
+SP5->ID3[label = "_|a|..|z"];
+
+ID3->ID3[label = "_|a|..|z|1|..|9"];
+ID3->ID32[label = "["];
+ID3->ID31[label = "space"];
+ID31->ID31[label = "space"];
+ID32->ID32[label = "space"];
+ID31->ID32[label = "["];
+ID32->ID35[label = "0"];
+ID32->ID33[label = "_|a|..|z"];
+ID33->ID33[label = "_|a|..|z|1|..|9"];
+ID32->ID34[label = "1|..|9"];
+ID32->ID38[label = "-"];
+ID34->ID34[label = "0|..|9"];
+ID33->ID36[label = "space"];
+ID34->ID36[label = "space"];
+ID35->ID36[label = "space"];
+ID36->ID37[label = "]"];
+ID36->ID36[label = "space"];
+ID33->ID37[label = "]"];
+ID34->ID37[label = "]"];
+ID35->ID37[label = "]"];
+ID38->ID34[label = "1|..|9"];
+ID37->SP6[label = "space"];
+{rank = same; ID31, ID32}
+
+
+
+ID3->K1[label = ":"];
+ID31->K1[label = ":"];
+ID37->K1[label = ":"];
+
+SP6->K1[label = ":"];
+K1->K2[label = "="];
+
+K2->ID4[label = "_|a|..|z"];
+K2->K2[label = "space"];
+
+ID4->ID4[label = "_|a|..|z|1|..|9"];
+ID4->ID42[label = "["];
+ID4->ID41[label = "space"];
+ID41->ID41[label = "space"];
+ID42->ID42[label = "space"];
+ID41->ID42[label = "["];
+ID42->ID45[label = "0"];
+ID42->ID43[label = "_|a|..|z"];
+ID43->ID43[label = "_|a|..|z|1|..|9"];
+ID42->ID44[label = "1|..|9"];
+ID42->ID48[label = "-"];
+ID44->ID44[label = "0|..|9"];
+ID43->ID46[label = "space"];
+ID44->ID46[label = "space"];
+ID45->ID46[label = "space"];
+ID46->ID47[label = "]"];
+ID46->ID46[label = "space"];
+ID43->ID47[label = "]"];
+ID44->ID47[label = "]"];
+ID45->ID47[label = "]"];
+ID48->ID44[label = "1|..|9"];
+ID47->SP7[label = "space"];
+{rank = same; ID41, ID42}
+ID41->E1[label = "E"];
+
+K2->N31[label = "0"];
+K2->N32[label = "-"];
+K2->N3[label = "1|..|9"];
+N3->N3[label = "0|..|9"]
+N3->SP7[label = "space"]
+N32->N3[label = "1|..|9"];
+N32->N31[label = "0"]
+N3->N33[label = "."];
+N31->N33[label = "."];
+N33->N33[label = "0|..|9"];
+N31->SP7[label = "space"];
+N33->SP7[label = "space"]
+SP7->E1[label = "E"];
+{rank = same; N31, N32}
+{rank = same; K2,K1,SP6}
+}

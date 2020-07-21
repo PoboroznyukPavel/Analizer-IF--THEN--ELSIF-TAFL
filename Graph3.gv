@@ -1,0 +1,97 @@
+digraph 
+finite_state_machine { 
+rankdir=TB; 
+size="" 
+node [shape = triangle];
+IF1;
+node [shape = octagon]; 
+SP7;
+
+
+node [shape = circle]; 
+SP8->SP8[label = "space"];
+SP7->E1[label = "E"]; 
+E1->END2[label = "N"];
+END2->END3[label = "D"];
+END3->F[label = ";"];
+E1->E2[label = "L"];
+E2->E3[label = "S"];
+E3->IF1[label = "I"];
+E3->E4[label = "E"];
+E4->SP8[label = "space"];
+SP9->SP9[label = "space"];
+SP8->ID5[label = "_|a|..|z"];
+
+ID5->ID5[label = "_|a|..|z|1|..|9"];
+ID5->ID52[label = "["];
+ID5->ID51[label = "space"];
+ID51->ID51[label = "space"];
+ID52->ID52[label = "space"];
+ID51->ID52[label = "["];
+ID52->ID55[label = "0"];
+ID52->ID53[label = "_|a|..|z"];
+ID53->ID53[label = "_|a|..|z|1|..|9"];
+ID52->ID54[label = "1|..|9"];
+ID52->ID58[label = "-"];
+ID54->ID54[label = "0|..|9"];
+ID53->ID56[label = "space"];
+ID54->ID56[label = "space"];
+ID55->ID56[label = "space"];
+ID56->ID57[label = "]"];
+ID56->ID56[label = "space"];
+ID53->ID57[label = "]"];
+ID54->ID57[label = "]"];
+ID55->ID57[label = "]"];
+ID58->ID54[label = "1|..|9"];
+ID57->SP9[label = "space"];
+{rank = same; ID51, ID52}
+
+ID5->K3[label = ":"];
+ID51->K3[label = ":"];
+ID57->K3[label = ":"];
+
+SP9->K3[label = ":"];
+K3->K4[label = "="];
+
+K4->ID6[label = "_|a|..|z"];
+K4->K4[label = "space"];
+
+ID6->ID6[label = "_|a|..|z|1|..|9"];
+ID6->ID62[label = "["];
+ID6->ID61[label = "space"];
+ID61->ID61[label = "space"];
+ID62->ID62[label = "space"];
+ID61->ID62[label = "["];
+ID62->ID65[label = "0"];
+ID62->ID63[label = "_|a|..|z"];
+ID63->ID63[label = "_|a|..|z|1|..|9"];
+ID62->ID64[label = "1|..|9"];
+ID64->ID64[label = "0|..|9"];
+ID63->ID66[label = "space"];
+ID64->ID66[label = "space"];
+ID65->ID66[label = "space"];
+ID66->ID67[label = "]"];
+ID66->ID66[label = "space"];
+ID63->ID67[label = "]"];
+ID64->ID67[label = "]"];
+ID65->ID67[label = "]"];
+
+ID67->SP10[label = "space"];
+ID61->END1[label = "e"];
+
+K4->N41[label = "0"];
+K4->N42[label = "-"];
+K4->N43[label = "1|..|9"];
+N42->N43[label = "1|..|9"];
+N42->N41[label = "0"];
+N41->N43[label = "."];
+N43->N43[label = "0|..|9"];
+N41->SP10[label = "space"];
+N43->SP10[label = "space"];
+{rank = same; N41, N42}
+
+SP10->END1[label = "E"];
+END1->END2[label = "N"]
+
+
+}

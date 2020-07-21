@@ -1,0 +1,174 @@
+digraph 
+finite_state_machine { 
+rankdir=TB; 
+size="" 
+node [shape = square]; 
+SP5;
+
+node [shape = triangle]; 
+E3;
+
+node [shape = circle]; 
+
+S-> IF1 [ label = "i" ]
+IF1-> IF2 [label = "f"]
+IF2->SP1[label = "'space'"]
+SP1->SP1[label  = "'space'"]
+SP2->SP2[label  = "'space'"]
+SP3->SP3[label  = "'space'"]
+SP4->SP4[label  = "'space'"]
+SP5->SP5[label  = "'space'"]
+
+E3->IF1[ label = "i" ];
+
+SP1->ID1[label = "_|a|..|z"];
+ID1->ID1[label = "_|a|..|z|1|..|9"];
+ID1->ID11[label = "space"];
+ID1->ID12[label = "["];
+ID11->ID11[label = "space"];
+ID11->ID12[label = "["];
+ID12->ID12[label = "space"];
+ID12->ID13[label = "_|a|..|z"];
+ID12->ID14[label = "1|..|9"];
+ID12->ID15[label = "0"];
+ID13->ID13[label = "_|a|..|z|1|..|9"];
+ID13->ID16[label = "space"];
+ID13->ID17[label = "]"];
+ID14->ID14[label = "0|..|9"];
+ID14->ID17[label = "]"];
+ID14->ID16[label = "space"];
+ID15->ID16[label = "space"];
+ID15->ID17[label = "]"];
+ID16->ID17[label = "]"];
+ID16->ID16[label = "space"];
+ID12->ID18[label = "-"];
+ID18->ID14[label = "1|..|9"];
+
+ID17->SP2[label = "space"];
+{rank = same; ID11, ID12}
+
+SP1->N11[label = "0"];
+SP1->N12[label = "-"];
+SP1->N1[label = "1|..|9"];
+N1->N13[label = "."];
+N1->N1[label = "0|..|9"];
+N12->N1[label = "1|..|9"];
+N12->N11[label = "0"];
+N11->N13[label = "."];
+N13->N13[label = "0|..|9"];
+N11->SP2[label = "space"];
+N13->SP2[label = "space"];
+N1->SP2[label = "space"];
+{rank = same; N11, N12}
+
+ID17->r2[label = "<"]
+ID17->r3[label = "&|=|#|~"]
+ID17->r1[label = ">"]
+ID11->r2[label = "<"]
+ID11->r3[label = "&|=|#|~"]
+ID11->r1[label = ">"]
+ID1->r2[label = "<"]
+ID1->r3[label = "&|=|#|~"]
+ID1->r1[label = ">"]
+N13->r2[label = "<"]
+N13->r3[label = "&|=|#|~"]
+N13->r1[label = ">"]
+N11->r2[label = "<"]
+N11->r3[label = "&|=|#|~"]
+N11->r1[label = ">"]
+N1->r2[label = "<"]
+N1->r3[label = "&|=|#|~"]
+N1->r1[label = ">"]
+
+
+
+
+SP2->NT1[label = "N"]
+SP2->OR1[label = "O"]
+SP2->A1[label = "A"]
+
+SP2->r1[label = ">"]
+SP2->r2[label = "<"]
+SP2->r3[label = "&|=|#|~"]
+
+NT1->NT2[label = "O"]
+NT2->NT3[label = "T"]
+NT3->SP3[label = "space"]
+
+A1->A2[label = "N"]
+A2->A3[label = "D"]
+A3->SP3[label = "space"]
+
+OR1->OR2[label = "R"]
+OR2->SP3[label = "space"]
+
+r2->r3[label = ">|="]
+r1->r3[label = "="]
+r2->SP3[label = "space"]
+r1->SP3[label = "space"]
+r3->SP3[label = "space"]
+
+
+SP3->N21[label = "0"];
+SP3->N22[label = "-"];
+SP3->N2[label = "1|..|9"];
+SP3->ID2[label = "_|a|..|z"];
+r1->N21[label = "0"];
+r1->N22[label = "-"];
+r1->N2[label = "1|..|9"];
+r1->ID2[label = "_|a|..|z"];
+r2->N21[label = "0"];
+r2->N22[label = "-"];
+r2->N2[label = "1|..|9"];
+r2->ID2[label = "_|a|..|z"];
+r3->N21[label = "0"];
+r3->N22[label = "-"];
+r3->N2[label = "1|..|9"];
+r3->ID2[label = "_|a|..|z"];
+{rank = same; r1,r2}
+{rank = same; r3, SP3}
+
+ID2->ID2[label = "_|a|..|z|1|..|9"];
+ID2->ID22[label = "["];
+ID2->ID21[label = "space"];
+ID21->ID21[label = "space"];
+ID22->ID22[label = "space"];
+ID21->ID22[label = "["];
+ID22->ID25[label = "0"];
+ID22->ID23[label = "_|a|..|z"];
+ID23->ID23[label = "_|a|..|z|1|..|9"];
+ID22->ID24[label = "1|..|9"];
+ID22->ID28[label = "-"];
+ID24->ID24[label = "0|..|9"];
+ID23->ID26[label = "space"];
+ID24->ID26[label = "space"];
+ID25->ID26[label = "space"];
+ID26->ID27[label = "]"];
+ID26->ID26[label = "space"];
+ID23->ID27[label = "]"];
+ID24->ID27[label = "]"];
+ID25->ID27[label = "]"];
+ID28->ID24[label = "1|..|9"];
+ID27->SP4[label = "space"];
+{rank = same; ID21, ID22}
+
+{rank = same; S,IF1,IF2,SP1,ID1}
+{rank = same; N21, N22}
+
+N22->N2[label = "1|..|9"];
+N2->N2[label = "0|..|9"];
+N22->N21[label = "0"];
+N21->N23[label = "."];
+N2->N23[label = "."];
+N23->N23[label = "0|..|9"];
+N21->SP4[label = "space"];
+N23->SP4[label = "space"];
+
+SP2->T1[label = "T"]
+SP4->T1[label = "T"]
+T1->T2[label = "H"]
+T2->T3[label = "E"]
+T3->T4[label = "N"]
+T4->SP5[label = "'space'"];
+{rank = same; SP4,T1,T2,T3,T4,SP5}
+}
